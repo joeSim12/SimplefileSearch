@@ -4,14 +4,14 @@ import re
 from docx import *
 
 
-def readingword(docpath, stringlooked): #word
+def readingword(docpath, stringlooked):
     document = opendocx(docpath)
     # returns true if found
     if search(document, stringlooked):
-        print(" the following file may be about :", stringlooked, "\n", docpath)
+        print(" the following word document may be about :", stringlooked, "\n", docpath)
 
 
-def readPdf(docpath, stringlooked):  #pdf 
+def readPdf(docpath, stringlooked):
     reader = PyPDF2.PdfReader(docpath)
     num_pages = len(reader.pages)
     for page in reader.pages:
@@ -19,11 +19,18 @@ def readPdf(docpath, stringlooked):  #pdf
         # print(text)
         res_search = re.search(stringlooked, text)
         if res_search:
-            print("also may be found in the following pdfs: ", docpath)
+            print("the following pdf document may be about: ", docpath)
 
 
-path_of_the_folder = r" YOUR FOLDER PATH"  # enter your folder path
-reqStr = " WANTED SEARCH "  # enter the string / topic you want to search
+path_of_the_folder = input("enter the folder path you want to look in:\n")  # enter your folder path
+while not os.path.exists(path_of_the_folder):
+    print("folder or path not found")
+    path_of_the_folder = input("enter the folder path you want to look in:\n")
+
+reqStr = input("enter word to search:\n")  # enter the string / topic you want to search
+while reqStr == "":
+    print("invalid input")
+    reqStr = input("enter word/number to search:\n")
 print("Files in a specified path:")
 for filename in os.listdir(path_of_the_folder):  # folder path
     f = os.path.join(path_of_the_folder, filename)  # file
@@ -32,6 +39,3 @@ for filename in os.listdir(path_of_the_folder):  # folder path
 
     elif os.path.isfile(f) and f.endswith(".pdf") or os.path.isfile(f) and f.endswith(".pdf"):
         readPdf(docpath=f, stringlooked=reqStr)
-
-
-       
