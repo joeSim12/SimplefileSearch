@@ -22,16 +22,14 @@ def readPdf(docpath, stringlooked):
             print("the following pdf document may be about: ", docpath)
 
 
-path_of_the_folder = input("enter the folder path you want to look in:\n")  # enter your folder path
-while not os.path.exists(path_of_the_folder):
-    print("folder or path not found")
-    path_of_the_folder = input("enter the folder path you want to look in:\n")
+path_of_the_folder = r"C:\Users\wajds\OneDrive\Documents"
 
 reqStr = input("enter word to search:\n")  # enter the string / topic you want to search
 while reqStr == "":
     print("invalid input")
     reqStr = input("enter word/number to search:\n")
 print("Files in a specified path:")
+
 for filename in os.listdir(path_of_the_folder):  # folder path
     f = os.path.join(path_of_the_folder, filename)  # file
     if os.path.isfile(f) and f.endswith(".doc") or os.path.isfile(f) and f.endswith(".docx"):
