@@ -22,8 +22,8 @@ def readPdf(docpath, stringlooked):
             print("also may be found in the following pdfs: ", docpath)
 
 
-path_of_the_folder = r"C:\Users\wajds\OneDrive\Documents"  # enter your folder path
-reqStr = "php"  # enter the string / topic you want to search
+path_of_the_folder = r" YOUR FOLDER PATH"  # enter your folder path
+reqStr = " WANTED SEARCH "  # enter the string / topic you want to search
 print("Files in a specified path:")
 for filename in os.listdir(path_of_the_folder):  # folder path
     f = os.path.join(path_of_the_folder, filename)  # file
