@@ -22,7 +22,7 @@ def readPdf(docpath, stringlooked):
             print("the following pdf document may be about: ", docpath)
 
 
-path_of_the_folder = r"C:\Users\wajds\OneDrive\Documents"
+path_of_the_folder = r" your folder path"
 
 reqStr = input("enter word to search:\n")  # enter the string / topic you want to search
 while reqStr == "":
