@@ -4,14 +4,14 @@ import re
 from docx import *
 
 
-def readingword(docpath, stringlooked):
+def readingword(docpath, stringlooked): #word
     document = opendocx(docpath)
     # returns true if found
     if search(document, stringlooked):
         print(" the following file may be about :", stringlooked, "\n", docpath)
 
 
-def readPdf(docpath, stringlooked):
+def readPdf(docpath, stringlooked):  #pdf 
     reader = PyPDF2.PdfReader(docpath)
     num_pages = len(reader.pages)
     for page in reader.pages:
