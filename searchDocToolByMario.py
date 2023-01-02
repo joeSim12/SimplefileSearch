@@ -16,3 +16,6 @@ for filename in os.listdir(path_of_the_folder):  # folder path
     f = os.path.join(path_of_the_folder, filename)  # file
     if os.path.isfile(f) and f.endswith(".doc") or os.path.isfile(f) and f.endswith(".docx"):
         print(readingword(docpath=f, stringlooked=reqStr))
+
+        
+        
