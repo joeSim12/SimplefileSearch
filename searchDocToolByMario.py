@@ -19,7 +19,7 @@ def readPdf(docpath, stringlooked):
         # print(text)
         res_search = re.search(stringlooked, text)
         if res_search:
-            print("the following pdf document may be about: ", docpath)
+            print("the following pdf document may be about: ",stringlooked, "\n", docpath)
 
 
 path_of_the_folder = r" your folder path"
